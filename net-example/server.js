@@ -13,11 +13,18 @@ server.on("connection", client => { // client is the callback
     console.log("Message from client: ", data);
   });
 
+  client.on("close", ()=>{
+    console.log("Client disconnected")
+  })
+  
+
 });
 
 server.on("close", end =>{
   console.log("Connection terminated")
 })
+
+
 
 server.listen(3000, () => {
   //8000 works for me.
